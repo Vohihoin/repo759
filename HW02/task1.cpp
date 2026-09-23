@@ -36,7 +36,7 @@ int main(int argc, char* argv[]){
     // create a uniform real distribution between -1.0 and 1.0
     std::uniform_real_distribution<float> distribution(-1.0f, 1.0f);
 
-    for (int i = 0; i < n; i++) {
+    for (int  i = 0; i < n; i++) {
         arr[i] = distribution(generator);
     }
 
