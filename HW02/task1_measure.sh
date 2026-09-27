@@ -7,11 +7,11 @@
 #SBATCH --output=Scaling_Analysis.out
 
 #SBATCH --time=0-00:01:00
+#SBATCH --mem=8G
 #SBATCH --ntasks=1 --cpus-per-task=1
 
 # actual script commands
 g++ scan.cpp task1.cpp -Wall -O3 -std=c++17 -o task1
-./task1 $1
 
 # help me write a script that will cycle through a range of input values
 # 10 - 30, and pass in 2^i
