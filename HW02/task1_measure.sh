@@ -1,0 +1,30 @@
+#!/usr/bin/env zsh
+
+#SBATCH -p instruction
+
+#SBATCH --job-name=Scaling_Analysis
+#SBATCH --error=Scaling_Analysis.err
+#SBATCH --output=Scaling_Analysis.out
+
+#SBATCH --time=0-00:01:00
+#SBATCH --ntasks=1 --cpus-per-task=1
+
+# actual script commands
+g++ scan.cpp task1.cpp -Wall -O3 -std=c++17 -o task1
+./task1 $1
+
+# help me write a script that will cycle through a range of input values
+# 10 - 30, and pass in 2^i
+
+# the first line of output from each iteration is the time in milliseconds
+# let us extract and log the time for each input size
+
+# loop through 2^10 to 2^30 and run task1 with each value as input
+# then extract the first line of output as the time in milliseconds and log it
+for i in {10..30}
+do
+    time_ms=$(./task1 $((2**i)) | head -n 1)
+    echo "2^$i: $time_ms ms" >> timing_log.txt
+done
+
+echo "Measurement complete."
