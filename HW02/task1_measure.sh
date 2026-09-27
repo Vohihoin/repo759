@@ -21,6 +21,7 @@ g++ scan.cpp task1.cpp -Wall -O3 -std=c++17 -o task1
 
 # loop through 2^10 to 2^30 and run task1 with each value as input
 # then extract the first line of output as the time in milliseconds and log it
+> timing_log.txt
 for i in {10..30}
 do
     time_ms=$(./task1 $((2**i)) | head -n 1)
