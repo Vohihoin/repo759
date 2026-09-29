@@ -6,7 +6,7 @@
 #SBATCH --error=Task2.err
 #SBATCH --output=Task2.out
 
-#SBATCH --time=0-00:01:00
+#SBATCH --time=0-00:01:30
 #SBATCH --ntasks=1 --cpus-per-task=1
 
 # actual script commands
