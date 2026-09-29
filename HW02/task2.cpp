@@ -59,33 +59,33 @@ int main(int argc, char* argv[]){
 
     std::cout << time_span.count() << std::endl;
 
-    // // Print the first and last elements of the output array
-    // std::cout << output_arr[0] << std::endl;
-    // std::cout << output_arr[(n*n)-1] << std::endl;
+    // Print the first and last elements of the output array
+    std::cout << output_arr[0] << std::endl;
+    std::cout << output_arr[(n*n)-1] << std::endl;
 
-    // Print the input array for verification
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            std::cout << std::fixed << std::setprecision(3) << arr[i*n + j] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    // Print the mask for verification
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < m; j++) {
-            std::cout << std::fixed << std::setprecision(3) << mask[i*m + j] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    // Print the entire output array for verification
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            std::cout << std::fixed << std::setprecision(3) << output_arr[i*n + j] << " ";
-        }
-        std::cout << std::endl;
-    }
+//    // Print the input array for verification
+//    for (int i = 0; i < n; i++) {
+//        for (int j = 0; j < n; j++) {
+//            std::cout << std::fixed << std::setprecision(3) << arr[i*n + j] << " ";
+//        }
+//        std::cout << std::endl;
+//    }
+//
+//    // Print the mask for verification
+//    for (int i = 0; i < m; i++) {
+//        for (int j = 0; j < m; j++) {
+//            std::cout << std::fixed << std::setprecision(3) << mask[i*m + j] << " ";
+//        }
+//        std::cout << std::endl;
+//    }
+//
+//    // Print the entire output array for verification
+//    for (int i = 0; i < n; i++) {
+//        for (int j = 0; j < n; j++) {
+//            std::cout << std::fixed << std::setprecision(3) << output_arr[i*n + j] << " ";
+//        }
+//        std::cout << std::endl;
+//    }
 
     delete[] arr;
     delete[] output_arr;
