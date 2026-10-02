@@ -96,7 +96,6 @@ int main(int argc, char* argv[]){
     std::cout << time_span.count() << std::endl;
     std::cout << arr_C[(n*n)-1] << std::endl;
 
-
     delete[] arr_A;
     delete[] arr_B;
     delete[] arr_C;
