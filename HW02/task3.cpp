@@ -11,7 +11,7 @@ using std::chrono::duration;
 
 int main(int argc, char* argv[]){
 
-    int n = 1024;
+    int n = 1000;
 
     // TIMING SETUP
     high_resolution_clock::time_point start;
