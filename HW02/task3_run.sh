@@ -6,6 +6,7 @@
 #SBATCH --error=Task3.err
 #SBATCH --output=Task3.out
 
+#SBATCH --mem=8G
 #SBATCH --time=0-00:01:00
 #SBATCH --ntasks=1 --cpus-per-task=2
 
