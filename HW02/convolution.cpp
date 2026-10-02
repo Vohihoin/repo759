@@ -1,6 +1,8 @@
 #include "convolution.h"
 
 // Assuming square 2D array of size n
+// Helper function to handle out-of-bounds indices in the image array
+// for convolution
 inline float index_row_major_for_convolution(const float* array, int i, int j, std::size_t n){
     if (!(i >= 0 && i < static_cast<int>(n)) || !(j >= 0 && j < static_cast<int>(n))) { // If any of our indices is out of bounds
         if ((i >= 0 && i < static_cast<int>(n)) || (j >= 0 && j < static_cast<int>(n))){ // But the other index is in bound (edge), then we return 1

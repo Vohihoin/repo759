@@ -47,6 +47,7 @@ int main(int argc, char* argv[]){
     end = high_resolution_clock::now();
     time_span = std::chrono::duration_cast<duration<double, std::milli>>(end - start);
 
+    // Prints out the time taken by my scan function in ms
     std::cout << time_span.count() << std::endl;
 
     // Print the first and last elements of the output array
