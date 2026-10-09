@@ -44,7 +44,7 @@ void mmul4(const std::vector<double>& A, const std::vector<double>& B, double* C
             // initialize C[i][j] = 0
             C[(i * n) + j] = 0;
             for (int k = 0; k < static_cast<int>(n); k++){
-                C[(i * n) + j] += A.at((i * n) + k) * B.at( (k * n)  + j);
+                C[(i * n) + j] += A[(i * n) + k] * B[ (k * n)  + j];
             }
         }
     }
