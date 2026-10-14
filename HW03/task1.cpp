@@ -32,8 +32,6 @@ int main(int argc, char* argv[]){
     #endif
 
     // OPENMP SETUP
-    std::cout << "Max number of threads is " << omp_get_max_threads() << std::endl;
-    std::cout << "running with " << t << " threads" << std::endl;
     omp_set_num_threads(t);
 
     // TIMING SETUP
@@ -87,8 +85,15 @@ int main(int argc, char* argv[]){
 
     time_span = std::chrono::duration_cast<duration<double, std::milli>>(end - start);
     
+
+    // Print the first element of array C
+    std::cout << C[0] << std::endl;
+
+    // Print the last element of array C
+    std::cout << C[n*n - 1] << std::endl;
+
     // Print the time taken for mmul1 and last element of array C
-    std::cout << time_span.count() << " ms" << std::endl;
+    std::cout << time_span.count() << std::endl;
 
     // // Print out the entire array C
     // for (int i = 0; i < n*n; i++) {
@@ -97,9 +102,7 @@ int main(int argc, char* argv[]){
     //         std::cout << std::endl;
     //     }
     // }
-
-    std::cout << "Last element of C: " << C[n*n - 1] << std::endl;
-
+    
     delete[] A;
     delete[] B;
     delete[] C;
