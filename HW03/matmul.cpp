@@ -4,7 +4,7 @@ void mmul(const float* A, const float* B, float* C, const std::size_t n){
     
     
     // Manual flattening of the matrix multiplication loop
-    int F = n*n*n;
+    std::size_t F = n*n*n; // F has to be size_t, else for relatively small values of n like 2000, n^3 will overflow and become negative
 
     #pragma omp parallel 
     {
@@ -20,10 +20,10 @@ void mmul(const float* A, const float* B, float* C, const std::size_t n){
 
         // Then perform the matrix multiplication using the flattened loop
         #pragma omp for schedule(static, n)
-        for (int f = 0; f < F; f++){
-            int j = f % n;
-            int k = (f/n) % n;
-            int i = f/(n*n);
+        for (std::size_t f = 0; f < F; f++){
+	    std::size_t j = f % n;
+            std::size_t k = (f/n) % n;
+	    std::size_t i = f/(n*n);
 
             // Want each update to C[(i * n) + j] to be atomic, so that
             // the increments made by different threads do not conflict

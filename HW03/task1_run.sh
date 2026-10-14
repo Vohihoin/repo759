@@ -6,7 +6,7 @@
 #SBATCH --error=Task1.err
 #SBATCH --output=Task1.out
 
-#SBATCH --mem=8G
+#SBATCH --mem=16G
 #SBATCH --time=0-00:01:00
 #SBATCH --ntasks=1 --cpus-per-task=20
 
