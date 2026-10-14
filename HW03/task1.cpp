@@ -24,6 +24,9 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
+    // Override the matrix size for testing purposes
+    n = 3;
+
     // OPENMP SETUP
     omp_set_num_threads(t);
 
@@ -34,37 +37,58 @@ int main(int argc, char* argv[]){
 
     // ACTUAL PROGRAM
 
-    // generate 3 n x n random matrices to perform C=AB 
-    float* A = new float[n*n];
-    float* B = new float[n*n];
+    // // generate 3 n x n random matrices to perform C=AB 
+    // float* A = new float[n*n];
+    // float* B = new float[n*n];
+    // float* C = new float[n*n];
+
+    // // create a random number generator
+    // std::random_device rd;
+    // std::mt19937 generator(rd()); // creates a Mersenne Twister random number generator
+
+    // // create a uniform real distribution between -2.0 and 2.0 for the 
+    // // matrix multiplication
+    // std::uniform_real_distribution<float> distribution(-2.0f, 2.0f);
+
+    // for (int i = 0; i < n*n; i++) {
+    //     A[i] = distribution(generator);
+    // }
+
+    // for (int i = 0; i < n*n; i++) {
+    //     B[i] = distribution(generator);
+    // }
+
+    float* A = new float[n*n]{
+        1, 2, 3,
+        4, 5, 6,
+        7, 8, 9,
+    };
+
+    float* B = new float[n*n]{
+        1, 2, 3,
+        4, 5, 6,
+        7, 8, 9,
+    };
+
     float* C = new float[n*n];
-
-    // create a random number generator
-    std::random_device rd;
-    std::mt19937 generator(rd()); // creates a Mersenne Twister random number generator
-
-    // create a uniform real distribution between -2.0 and 2.0 for the 
-    // matrix multiplication
-    std::uniform_real_distribution<float> distribution(-2.0f, 2.0f);
-
-    for (int i = 0; i < n*n; i++) {
-        A[i] = distribution(generator);
-    }
-
-    for (int i = 0; i < n*n; i++) {
-        B[i] = distribution(generator);
-    }
 
     // Perform and time matrix multiplication using mmul
     start = high_resolution_clock::now();
     mmul(A, B, C, n);
     end = high_resolution_clock::now();
-    
+
     time_span = std::chrono::duration_cast<duration<double, std::milli>>(end - start);
     
     // Print the time taken for mmul1 and last element of array C
-    std::cout << time_span.count() << std::endl;
-    std::cout << C[(n*n)-1] << std::endl;
+    std::cout << time_span.count() << " ms" << std::endl;
+
+    // Print out the entire array C
+    for (int i = 0; i < n*n; i++) {
+        std::cout << C[i] << " ";
+        if ((i + 1) % n == 0) {
+            std::cout << std::endl;
+        }
+    }
 
     delete[] A;
     delete[] B;

@@ -11,7 +11,7 @@ void mmul(const float* A, const float* B, float* C, const std::size_t n){
 
         // Initialize the output matrix C to zero
         #pragma omp for schedule(static)
-        for (int l = 0; l < n*n; l++){
+        for (std::size_t l = 0; l < n*n; l++){
             C[l] = 0; // Doesn't need atomic for two reasons:
                         // 1) Each element is written to by exactly one thread
                         // 2) Monotonic change, so even if multiple threads write
