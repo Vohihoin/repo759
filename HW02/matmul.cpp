@@ -13,6 +13,7 @@ void mmul1(const double *A, const double *B, double *C, const unsigned int n){
 }
 
 void mmul2(const double *A, const double *B, double *C, const unsigned int n){
+    
     for (int i = 0; i < static_cast<int>(n); i++){
         for (int k = 0; k < static_cast<int>(n); k++){
             for (int j = 0; j < static_cast<int>(n); j++){

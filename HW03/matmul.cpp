@@ -21,9 +21,9 @@ void mmul(const float* A, const float* B, float* C, const std::size_t n){
         // Then perform the matrix multiplication using the flattened loop
         #pragma omp for schedule(static, n)
         for (std::size_t f = 0; f < F; f++){
-	    std::size_t j = f % n;
+	        std::size_t j = f % n;
             std::size_t k = (f/n) % n;
-	    std::size_t i = f/(n*n);
+	        std::size_t i = f/(n*n);
 
             // Want each update to C[(i * n) + j] to be atomic, so that
             // the increments made by different threads do not conflict
@@ -49,4 +49,19 @@ void mmul(const float* A, const float* B, float* C, const std::size_t n){
     //     }
     // }
 
+}
+
+void mmul2(const double *A, const double *B, double *C, const unsigned int n){
+    
+    #pragma omp parallel for schedule(static, )
+    for (int i = 0; i < static_cast<int>(n); i++){
+        for (int k = 0; k < static_cast<int>(n); k++){
+            for (int j = 0; j < static_cast<int>(n); j++){
+                if (k == 0){ // initialize C[i][j] = 0
+                    C[(i * n) + j] = 0;
+                }
+                C[(i * n) + j] += A[(i * n) + k] * B[ (k * n)  + j];
+            }
+        }
+    }
 }
