@@ -22,6 +22,7 @@ int main(int argc, char* argv[]) {
     int t = std::stoi(argv[2]);
     std::size_t ts = std::stoi(argv[3]);
 
+    // OPENMP SETUP
     // Set the number of OpenMP threads based on t
     omp_set_num_threads(t);
 
@@ -51,6 +52,7 @@ int main(int argc, char* argv[]) {
     end = high_resolution_clock::now();
     time_span = std::chrono::duration_cast<duration<double, std::milli>>(end - start);
 
+    // Print out the first, last elements and the time taken for the sort operation
     std::cout << arr[0] << std::endl;
     std::cout << arr[n-1] << std::endl;
     std::cout << time_span.count() << std::endl;

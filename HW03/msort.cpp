@@ -34,7 +34,8 @@ void msort(int* arr, const std::size_t n, const std::size_t threshold){
 void msort_rec(int* into, int* from, std::size_t start, std::size_t end, const std::size_t threshold){
 
     std::size_t arr_size = start - end + 1;
-    if (arr_size <= threshold){ // then, we can perform a serial sort on our "into" sub-array
+    if (arr_size < threshold){ // we can perform a serial sort on our "into" sub-array
+                               // when our sub-array size is smaller than the threshold
         std::sort(&(into[start]), &(into[end]));
         return;
     }
