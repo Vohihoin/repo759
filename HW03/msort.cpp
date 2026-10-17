@@ -2,11 +2,12 @@
 #include <cstring>
 #include "msort.h"
 
-
+void msort_rec(int* into, int* from, std::size_t start, std::size_t end, const std::size_t threshold);
 
 void msort(int* arr, const std::size_t n, const std::size_t threshold){
     int* arr_copy = new int[n];
     std::memcpy(arr_copy, arr, n * sizeof(int)); // only using because array is of primitive type
+    
     #pragma omp parallel
     {
         #pragma omp single
@@ -17,7 +18,7 @@ void msort(int* arr, const std::size_t n, const std::size_t threshold){
 }
 
 /**
- * @brief RecursiveParallel Merge Sort
+ * @brief Recursive Parallel Merge Sort
  * 
  * If the size of the sub-array is below @ref threshold, "into" will be sorted serially. Because our end-goal is always
  * to have into sorted.
@@ -32,8 +33,8 @@ void msort(int* arr, const std::size_t n, const std::size_t threshold){
  */
 void msort_rec(int* into, int* from, std::size_t start, std::size_t end, const std::size_t threshold){
 
-    int arr_size = start - end + 1;
-    if (arr_size < threshold){ // then, we can perform a serial sort on our "into" sub-array
+    std::size_t arr_size = start - end + 1;
+    if (arr_size <= threshold){ // then, we can perform a serial sort on our "into" sub-array
         std::sort(&(into[start]), &(into[end]));
         return;
     }
@@ -56,9 +57,9 @@ void msort_rec(int* into, int* from, std::size_t start, std::size_t end, const s
     #pragma omp taskwait
 
     // Once we have the two sorted halves, we merge them from the "from" array into the "into" array
-    int i = start;
-    int j = middle;
-    for (int k = start; k < end; ++k){
+    std::size_t i= start;
+    std::size_t j = middle;
+    for (std::size_t k = start; k < end; ++k){
         if (i < middle && (j >= end || from[i] <= from[j])){
             into[k] = from[i];
             ++i;

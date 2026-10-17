@@ -16,7 +16,14 @@ inline float index_row_major_for_convolution(const float* array, int i, int j, s
 
 void convolve(const float *image, float *output, std::size_t n, const float *mask, std::size_t m){
     
-    #pragma parallel for collapse(4)
+    // For this parallelisation, we're going to use a parallel in the outer loop over x position,
+    // so that we don't have to worry about race conditions, since for the same thread is working on all
+    // the pixels in a given row, it won't be writing to the same output elements as other threads.
+
+    // We pick a chunk size of m, the size of the mask, so that the "span" of the mask (i.e. the elements the mask multiplies) 
+    // for the elements in the middle row of the chunk is the same elements this thread is already calculating the convolution
+    // for, so it already has them nearby.
+    #pragma omp parallel for schedule(static, m)
     for (int x = 0; x < static_cast<int>(n); x++){
         for (int y = 0; y < static_cast<int>(n); y++){
             
