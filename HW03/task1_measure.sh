@@ -24,6 +24,6 @@ g++ task1.cpp matmul.cpp -Wall -O3 -std=c++17 -o task1 -fopenmp
 for i in {1..20}
 do
     time_ms=$(./task1 1024 $i | tail -n 1)
-    echo "$i threads: $time_ms ms" >> timing_log.txt
-    echo "$i, $time_ms" >> timing_log.csv
+    echo "$i threads: $time_ms ms" >> task1_timing_log.txt
+    echo "$i, $time_ms" >> task1_timing_log.csv
 done
