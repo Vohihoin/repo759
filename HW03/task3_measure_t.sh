@@ -18,7 +18,7 @@ g++ task3.cpp msort.cpp -Wall -O3 -std=c++17 -o task3 -fopenmp
 
 # Run task3 for an n = 10^6, over different thread counts, a recursive threshold of 2  
 # (since we found that it had the best performance from measuring over ts), 
-for t in {1..10}
+for t in {1..20}
 do
     time_ms=$(./task3 $((10**6)) $t 2 | tail -n 1)
     echo "$t threads: $time_ms ms" >> task3_timing_log_t.txt
