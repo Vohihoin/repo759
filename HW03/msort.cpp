@@ -1,3 +1,4 @@
+#include <iostream>
 #include <algorithm>
 #include <cstring>
 #include "msort.h"
@@ -35,11 +36,11 @@ void msort(int* arr, const std::size_t n, const std::size_t threshold){
  */
 void msort_rec(int* into, int* from, std::size_t start, std::size_t end, const std::size_t threshold){
 
-    std::size_t arr_size = end - start + 1;
+    std::size_t arr_size = end - start;
     if (arr_size <= 1){
         return; // already sorted
-    }
-    
+    } 
+  
     if (arr_size < threshold){ // we can perform a serial sort on our "into" sub-array
                                // when our sub-array size is smaller than the threshold
         std::sort(&(into[start]), &(into[end]));
@@ -49,7 +50,7 @@ void msort_rec(int* into, int* from, std::size_t start, std::size_t end, const s
     // else, if we're above the threshold, we split our array in two
     // (conceptually doesn't matter if we're splitting an "into" array or a "from" array since at this point, we're assuming both halves
     // are unsorted and so have the exact same values)
-    std::size_t middle = start + (end - start) / 2; // (overflow-safe middle finding)
+    std::size_t middle = (start + end) / 2; // (overflow-safe middle finding)
 
     // Assign a task to sort the first half of the array
     #pragma omp task
