@@ -13,14 +13,11 @@
 # actual script commands
 g++ task1.cpp matmul.cpp -Wall -O3 -std=c++17 -o task1 -fopenmp
 
-> timing_log.txt
-> timing_log.csv
-
 # loop through 1 to 20 threads and run task1 with each value as input
 # then collect the time in milliseconds for the thread as the last line 
 # of output
-> timing_log.txt
-> timing_log.csv
+> task1_timing_log.txt
+> task1_timing_log.csv
 for i in {1..20}
 do
     time_ms=$(./task1 1024 $i | tail -n 1)
