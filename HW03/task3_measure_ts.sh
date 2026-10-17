@@ -2,9 +2,9 @@
 
 #SBATCH -p instruction
 
-#SBATCH --job-name=Task3_Measure
-#SBATCH --error=Task3_Measure.err
-#SBATCH --output=Task3_Measure.out
+#SBATCH --job-name=Task3_Measure_1
+#SBATCH --error=Task3_Measure_1.err
+#SBATCH --output=Task3_Measure_1.out
 
 #SBATCH --mem=16G
 #SBATCH --time=0-00:01:00
@@ -20,6 +20,6 @@ g++ task3.cpp msort.cpp -Wall -O3 -std=c++17 -o task3 -fopenmp
 for ts in {1..10}
 do
     time_ms=$(./task3 $((10**6)) 8 $((2**ts)) | tail -n 1)
-    echo "$t threads: $time_ms ms" >> task3_timing_log_ts.txt
-    echo "$t, $time_ms" >> task3_timing_log_ts.csv
+    echo "2^$ts threashold: $time_ms ms" >> task3_timing_log_ts.txt
+    echo "2^$ts, $time_ms" >> task3_timing_log_ts.csv
 done
