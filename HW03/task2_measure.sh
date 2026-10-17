@@ -13,10 +13,13 @@
 # actual script commands
 g++ task2.cpp convolution.cpp -Wall -O3 -std=c++17 -o task2 -fopenmp
 
+> task2_timing_log.txt
+> task2_timing_log.csv
+
 # Run task2 for an n = 1024, over different thread counts
 for t in {1..20}
 do
     time_ms=$(./task2 1024 $t | tail -n 1)
-    echo "$i threads: $time_ms ms" >> task2_timing_log.txt
-    echo "$i, $time_ms" >> task2_timing_log.csv
+    echo "$t threads: $time_ms ms" >> task2_timing_log.txt
+    echo "$t, $time_ms" >> task2_timing_log.csv
 done
