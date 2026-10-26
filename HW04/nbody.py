@@ -50,7 +50,7 @@ def main():
     dt = 0.01  # timestep
     softening = 0.1  # softening length
     G = 1.0  # Newton's Gravitational Constant
-    plotRealTime = True  # switch on for plotting as the simulation goes along
+    plotRealTime = False  # switch on for plotting as the simulation goes along
     board_size = 4
 
     # Generate Initial Conditions
