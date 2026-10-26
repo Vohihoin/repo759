@@ -12,4 +12,4 @@
 
 # actual script commands
 g++ task2.cpp -Wall -O3 -std=c++17 -o task2
-./task2 3 1
+./task2 100 5
