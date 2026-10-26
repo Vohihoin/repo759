@@ -7,7 +7,7 @@
 #SBATCH --output=Task2.out
 
 #SBATCH --mem=16G
-#SBATCH --time=0-00:01:00
+#SBATCH --time=0-00:03:00
 #SBATCH --ntasks=1 --cpus-per-task=8
 
 # actual script commands
