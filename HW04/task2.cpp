@@ -185,14 +185,20 @@ int main(int argc, char *argv[]) {
         for (int i = 0; i < N; i++){
             if (pos[i][0] > board_size){
                 pos[i][0] = board_size;
+            } else if (pos[i][0] < -board_size){
+                pos[i][0] = -board_size;
             }
 
             if (pos[i][1] > board_size){
                 pos[i][1] = board_size;
+            } else if (pos[i][1] < -board_size){
+                pos[i][1] = -board_size;
             }
 
             if (pos[i][2] > board_size){
                 pos[i][2] = board_size;
+            } else if (pos[i][2] < -board_size){
+                pos[i][2] = -board_size;
             }
         }
 
