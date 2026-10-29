@@ -88,18 +88,10 @@ int main(int argc, char *argv[]) {
 
     // File to save positions
     std::string filename = "positions.csv";
-
-    std::cout << "cool beans\n";
-
+    
     // Clear the file before starting simulation (optional)
     std::ofstream file;
     file.open(filename, std::ofstream::out | std::ofstream::trunc);
-    
-    if (!file.is_open()){
-        std::cout << "File couldn't open\n";
-    }else{
-        std::cout << "Cool beans\n";
-    }
     
     file.close();
 
@@ -217,7 +209,7 @@ int main(int argc, char *argv[]) {
         t += dt;
 
         // For debug: save positions to CSV at each step
-        savePositionsToCSV(pos, N, step, filename);
+        // savePositionsToCSV(pos, N, step, filename);
     }
 
     // Clean up dynamically allocated memory
