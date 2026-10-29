@@ -11,5 +11,5 @@
 #SBATCH --ntasks=1 --cpus-per-task=8
 
 # actual script commands
-g++ task3.cpp -Wall -O3 -std=c++17 -o task3
-./task3 100 5
+g++ task3.cpp -Wall -O3 -std=c++17 -o task3 -fopenmp
+./task3 100 5 8

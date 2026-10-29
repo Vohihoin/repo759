@@ -5,6 +5,7 @@
 #include <cstdlib>  
 #include <ctime>   
 #include <chrono>
+#include <omp.h>
 #include <random>
 
 using std::chrono::high_resolution_clock;
@@ -88,6 +89,9 @@ int main(int argc, char *argv[]) {
     double tEnd = std::stod(argv[2]); // Time at which simulation ends
     std::size_t num_threads = std::stoi(argv[3]);
 
+    // OpenMP SETUP
+    omp_set_num_threads(num_threads);
+
     // File to save positions
     std::string filename = "positions.csv";
 
@@ -133,7 +137,7 @@ int main(int argc, char *argv[]) {
     // - so that the center of mass remain stationary
     double velCM[3] = {0.0, 0.0, 0.0};
     double totalMass = 0.0;
-    #pragma omp parallel for reduction(+, velCM[0:3], totalMass)
+    #pragma omp parallel for reduction(+: velCM[0:3], totalMass)
     for (int i = 0; i < N; i++) {
         velCM[0] += vel[i][0] * mass[i];
         velCM[1] += vel[i][1] * mass[i];
