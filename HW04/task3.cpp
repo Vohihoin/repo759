@@ -233,7 +233,7 @@ int main(int argc, char *argv[]) {
 
     end = high_resolution_clock::now();
     duration_sec = std::chrono::duration_cast<duration<double, std::milli> >(end - start);
-    std::cout /*<< "time: "*/ << duration_sec.count() /*<< "ms\n"*/;
+    std::cout << "time: " << duration_sec.count() << "ms\n";
 
     return 0;
 }
