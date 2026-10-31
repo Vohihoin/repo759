@@ -7,7 +7,7 @@
 #SBATCH --output=Task3_Measure.out
 
 #SBATCH --mem=16G
-#SBATCH --time=0-00:30:00
+#SBATCH --time=0-00:01:00
 #SBATCH --ntasks=1 --cpus-per-task=8
 
 # actual script commands
@@ -32,7 +32,7 @@ for s in static "dynamic,8" "guided,8"; do
     
     # Pick filename based on schedule type
 
-    if [[$s == "static"]] then
+    if [[$s == "static"]]; then
         filename = "task3_measure_log_static"
     elif [[ $s == "dynamic,8" ]]; then
         filename = "task3_measure_log_dynamic"
