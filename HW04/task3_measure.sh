@@ -14,7 +14,7 @@
 g++ task3.cpp -Wall -O3 -std=c++17 -o task3 -fopenmp
 
 
-N=1000 # number of particles
+N=100 # number of particles
 T=100 # simulation time
 
 for s in static dynamic "guided,8"; do
