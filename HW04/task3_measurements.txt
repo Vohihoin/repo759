@@ -1,75 +1,147 @@
 static
 t: 1
-time: 9912.79ms
-time: 1472.48ms
+warm-up run
+time: 3367.45ms
+actual run
+time: 4724.08ms
+--------------------
 t: 2
-time: 1569.8ms
-time: 1656.3ms
+warm-up run
+time: 3777.41ms
+actual run
+time: 4319.49ms
+--------------------
 t: 3
-time: 3093.01ms
-time: 2246.4ms
+warm-up run
+time: 3396.39ms
+actual run
+time: 3119.22ms
+--------------------
 t: 4
-time: 1566.49ms
-time: 4641.07ms
+warm-up run
+time: 3440.99ms
+actual run
+time: 2642.76ms
+--------------------
 t: 5
-time: 1449.5ms
-time: 2398.09ms
+warm-up run
+time: 3316.16ms
+actual run
+time: 2934.6ms
+--------------------
 t: 6
-time: 2036.3ms
-time: 3104.63ms
+warm-up run
+time: 3398.19ms
+actual run
+time: 3560.27ms
+--------------------
 t: 7
-time: 2365.6ms
-time: 2231.96ms
+warm-up run
+time: 3367.43ms
+actual run
+time: 3512.27ms
+--------------------
 t: 8
-time: 7775.85ms
-time: 1605.73ms
-dynamic
+warm-up run
+time: 3401.69ms
+actual run
+time: 3647.68ms
+--------------------
+dynamic,8
 t: 1
-time: 2902.23ms
-time: 5465.25ms
+warm-up run
+time: 3619.3ms
+actual run
+time: 4727.33ms
+--------------------
 t: 2
-time: 3850.05ms
-time: 2913.53ms
+warm-up run
+time: 3572.69ms
+actual run
+time: 4219.06ms
+--------------------
 t: 3
-time: 3270.21ms
-time: 2965.93ms
+warm-up run
+time: 3603.13ms
+actual run
+time: 3193.69ms
+--------------------
 t: 4
-time: 3723.16ms
-time: 4682.88ms
+warm-up run
+time: 3675.72ms
+actual run
+time: 2669.31ms
+--------------------
 t: 5
-time: 2699.57ms
-time: 3076.42ms
+warm-up run
+time: 3497.51ms
+actual run
+time: 2907.07ms
+--------------------
 t: 6
-time: 3420.13ms
-time: 2716.04ms
+warm-up run
+time: 3614.35ms
+actual run
+time: 3118.4ms
+--------------------
 t: 7
-time: 4068.66ms
-time: 5378.93ms
+warm-up run
+time: 3505.66ms
+actual run
+time: 3185.19ms
+--------------------
 t: 8
-time: 5475.79ms
-time: 4988.76ms
+warm-up run
+time: 3629.38ms
+actual run
+time: 3513.52ms
+--------------------
 guided,8
 t: 1
-time: 1792.73ms
-time: 1775.96ms
+warm-up run
+time: 3481.52ms
+actual run
+time: 4727.56ms
+--------------------
 t: 2
-time: 2307.06ms
-time: 2328.3ms
+warm-up run
+time: 3582.88ms
+actual run
+time: 4166.76ms
+--------------------
 t: 3
-time: 2249.05ms
-time: 8411.19ms
+warm-up run
+time: 3472.7ms
+actual run
+time: 3127.86ms
+--------------------
 t: 4
-time: 1378.37ms
-time: 5538.82ms
+warm-up run
+time: 3578.2ms
+actual run
+time: 2632.81ms
+--------------------
 t: 5
-time: 3595.56ms
-time: 2308.43ms
+warm-up run
+time: 3693.52ms
+actual run
+time: 3047.05ms
+--------------------
 t: 6
-time: 2308.74ms
-time: 2365.33ms
+warm-up run
+time: 3450.86ms
+actual run
+time: 3493.33ms
+--------------------
 t: 7
-time: 6611.26ms
-time: 1361.49ms
+warm-up run
+time: 3492.69ms
+actual run
+time: 3312.1ms
+--------------------
 t: 8
-time: 1903.31ms
-time: 1940.76ms
+warm-up run
+time: 3461.4ms
+actual run
+time: 3515.41ms
+--------------------

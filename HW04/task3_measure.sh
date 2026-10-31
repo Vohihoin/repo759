@@ -25,7 +25,7 @@ for s in static "dynamic,8" "guided,8"; do
         
         echo "t: $t"
         echo "warm-up run"
-        ./task3 $N $T 8 # warm-up run
+        ./task3 $N $T $t # warm-up run
         echo "actual run"
         ./task3 $N $T $t
         echo "--------------------"
@@ -33,3 +33,5 @@ for s in static "dynamic,8" "guided,8"; do
     done
 
 done
+
+cp Task3_Measure.out task3_measurements.txt
