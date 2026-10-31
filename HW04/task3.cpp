@@ -25,7 +25,7 @@ void getAcc(const double pos[][3], const double mass[], double acc[][3], int N) 
     double r_vec[3];
     double inv_r3;
 
-    #pragma omp parallel for private(r_vec)
+    #pragma omp parallel for private(r_vec) schedule(runtime)
     for (int i = 0; i < N; i++){
         // Set the accelerations to zero so we
         // can increment into them
@@ -119,7 +119,7 @@ int main(int argc, char *argv[]) {
     double t = 0.0;
 
     // Set initial masses and random positions/velocities
-    #pragma omp parallel for
+    #pragma omp parallel for schedule(runtime)
     for (int i = 0; i < N; i++) {
         mass[i] = uniform_dist(generator);
 
@@ -137,7 +137,7 @@ int main(int argc, char *argv[]) {
     // - so that the center of mass remain stationary
     double velCM[3] = {0.0, 0.0, 0.0};
     double totalMass = 0.0;
-    #pragma omp parallel for reduction(+: velCM[0:3], totalMass)
+    #pragma omp parallel for reduction(+: velCM[0:3], totalMass) schedule(runtime)
     for (int i = 0; i < N; i++) {
         velCM[0] += vel[i][0] * mass[i];
         velCM[1] += vel[i][1] * mass[i];
@@ -149,7 +149,7 @@ int main(int argc, char *argv[]) {
     velCM[1] /= totalMass;
     velCM[2] /= totalMass;
 
-    #pragma omp parallel for
+    #pragma omp parallel for schedule(runtime)
     for (int i = 0; i < N; i++) {
         vel[i][0] -= velCM[0];
         vel[i][1] -= velCM[1];
@@ -167,7 +167,7 @@ int main(int argc, char *argv[]) {
         
         // (1/2) kick (update velocities half way based on acceleration)
 
-        #pragma omp parallel for
+        #pragma omp parallel for schedule(runtime)
         for (int i = 0; i < N; i++){
             vel[i][0] += acc[i][0] * ( dt / 2.0);
             vel[i][1] += acc[i][1] * ( dt / 2.0);
@@ -176,7 +176,7 @@ int main(int argc, char *argv[]) {
 
         // Drift (update full positions based on half-way interleaved velocity)
 
-        #pragma omp parallel for
+        #pragma omp parallel for schedule(runtime)
         for (int i = 0; i < N; i++){
             pos[i][0] += vel[i][0] * dt;
             pos[i][1] += vel[i][1] * dt;
@@ -185,7 +185,7 @@ int main(int argc, char *argv[]) {
 
         // Ensure particles stay within the board limits
 
-        #pragma omp parallel for
+        #pragma omp parallel for schedule(runtime)
         for (int i = 0; i < N; i++){
             if (pos[i][0] > board_size){
                 pos[i][0] = board_size;
@@ -211,7 +211,7 @@ int main(int argc, char *argv[]) {
 
         // (1/2) kick
 
-        #pragma omp parallel for
+        #pragma omp parallel for schedule(runtime)
         for (int i = 0; i < N; i++){
             vel[i][0] += acc[i][0] * ( dt / 2.0);
             vel[i][1] += acc[i][1] * ( dt / 2.0);
@@ -222,7 +222,7 @@ int main(int argc, char *argv[]) {
         t += dt;
 
         // For debug: save positions to CSV at each step
-        savePositionsToCSV(pos, N, step, filename);
+        // savePositionsToCSV(pos, N, step, filename);
     }
 
     // Clean up dynamically allocated memory
