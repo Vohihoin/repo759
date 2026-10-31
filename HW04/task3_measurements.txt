@@ -1,147 +1,147 @@
 static
 t: 1
 warm-up run
-time: 3367.45ms
+time: 4723.68ms
 actual run
-time: 4724.08ms
+time: 4721.52ms
 --------------------
 t: 2
 warm-up run
-time: 3777.41ms
+time: 4187.56ms
 actual run
-time: 4319.49ms
+time: 4163.82ms
 --------------------
 t: 3
 warm-up run
-time: 3396.39ms
+time: 3135.89ms
 actual run
-time: 3119.22ms
+time: 3071.37ms
 --------------------
 t: 4
 warm-up run
-time: 3440.99ms
+time: 2582.07ms
 actual run
-time: 2642.76ms
+time: 2566.04ms
 --------------------
 t: 5
 warm-up run
-time: 3316.16ms
+time: 2944.56ms
 actual run
-time: 2934.6ms
+time: 2976.03ms
 --------------------
 t: 6
 warm-up run
-time: 3398.19ms
+time: 3558.84ms
 actual run
-time: 3560.27ms
+time: 4001.82ms
 --------------------
 t: 7
 warm-up run
-time: 3367.43ms
+time: 3493.59ms
 actual run
-time: 3512.27ms
+time: 3409.11ms
 --------------------
 t: 8
 warm-up run
-time: 3401.69ms
+time: 3574.82ms
 actual run
-time: 3647.68ms
+time: 3403.71ms
 --------------------
 dynamic,8
 t: 1
 warm-up run
-time: 3619.3ms
+time: 4728.8ms
 actual run
-time: 4727.33ms
+time: 4731.46ms
 --------------------
 t: 2
 warm-up run
-time: 3572.69ms
+time: 4402.67ms
 actual run
-time: 4219.06ms
+time: 4409.37ms
 --------------------
 t: 3
 warm-up run
-time: 3603.13ms
+time: 3244.09ms
 actual run
-time: 3193.69ms
+time: 3153.37ms
 --------------------
 t: 4
 warm-up run
-time: 3675.72ms
+time: 2633.53ms
 actual run
-time: 2669.31ms
+time: 2670.1ms
 --------------------
 t: 5
 warm-up run
-time: 3497.51ms
+time: 2897.04ms
 actual run
-time: 2907.07ms
+time: 2853.32ms
 --------------------
 t: 6
 warm-up run
-time: 3614.35ms
+time: 3114.97ms
 actual run
-time: 3118.4ms
+time: 3183.02ms
 --------------------
 t: 7
 warm-up run
-time: 3505.66ms
+time: 3387.88ms
 actual run
-time: 3185.19ms
+time: 3273.18ms
 --------------------
 t: 8
 warm-up run
-time: 3629.38ms
+time: 3782.51ms
 actual run
-time: 3513.52ms
+time: 3493.81ms
 --------------------
 guided,8
 t: 1
 warm-up run
-time: 3481.52ms
+time: 4722.05ms
 actual run
-time: 4727.56ms
+time: 4735.77ms
 --------------------
 t: 2
 warm-up run
-time: 3582.88ms
+time: 4182.08ms
 actual run
-time: 4166.76ms
+time: 4220.7ms
 --------------------
 t: 3
 warm-up run
-time: 3472.7ms
+time: 3169.52ms
 actual run
-time: 3127.86ms
+time: 3056.37ms
 --------------------
 t: 4
 warm-up run
-time: 3578.2ms
+time: 2648.46ms
 actual run
-time: 2632.81ms
+time: 2632.86ms
 --------------------
 t: 5
 warm-up run
-time: 3693.52ms
+time: 3026.35ms
 actual run
-time: 3047.05ms
+time: 3054.61ms
 --------------------
 t: 6
 warm-up run
-time: 3450.86ms
+time: 3262.26ms
 actual run
-time: 3493.33ms
+time: 3210.66ms
 --------------------
 t: 7
 warm-up run
-time: 3492.69ms
+time: 3367.12ms
 actual run
-time: 3312.1ms
+time: 3325.91ms
 --------------------
 t: 8
 warm-up run
-time: 3461.4ms
+time: 3439.1ms
 actual run
-time: 3515.41ms
+time: 3516.23ms
 --------------------
