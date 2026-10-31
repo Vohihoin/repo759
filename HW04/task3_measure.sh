@@ -18,8 +18,13 @@ N=1000 # number of particles
 T=100 # simulation time
 
 for s in static dynamic "guided,8"; do
-    export OMP_SCHEDULE=$s
     echo $s
-    ./task3 1000 100 8
-    ./task3 1000 100 8
+    export OMP_SCHEDULE=$s
+    
+    for t in {1..8}; do
+        echo "t: $t"
+        ./task3 $N $T 8
+        ./task3 $N $T 8
+    done
+
 done
