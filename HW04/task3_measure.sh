@@ -5,7 +5,7 @@
 #SBATCH --error=Task3_Measure.err
 #SBATCH --output=Task3_Measure.out
 #SBATCH --mem=16G
-#SBATCH --time=0-00:05:00
+#SBATCH --time=0-00:15:00
 #SBATCH --ntasks=1 --cpus-per-task=8
 
 g++ task3.cpp -Wall -O3 -std=c++17 -o task3 -fopenmp || exit 1
