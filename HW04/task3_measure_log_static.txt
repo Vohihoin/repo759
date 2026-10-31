@@ -1,9 +1,9 @@
 schedule: static
-t: 1, warmup: 114130, run: 114292
-t: 2, warmup: 58396.8, run: 58324.4
-t: 3, warmup: 41316.3, run: 39930.9
-t: 4, warmup: 32043.8, run: 31216.8
-t: 5, warmup: 50001.1, run: 58051.6
-t: 6, warmup: 47864.9, run: 47754.2
-t: 7, warmup: 53019.4, run: 50691.9
-t: 8, warmup: 55263.7, run: 54745
+t: 1, warmup: 1155.24, run: 1154.08
+t: 2, warmup: 626.813, run: 637.819
+t: 3, warmup: 497.097, run: 514.887
+t: 4, warmup: 407.084, run: 404.958
+t: 5, warmup: 570.253, run: 572.922
+t: 6, warmup: 557.626, run: 556.052
+t: 7, warmup: 565.858, run: 565.593
+t: 8, warmup: 594.498, run: 579.728

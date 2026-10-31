@@ -1,1 +1,9 @@
 schedule: dynamic,8
+t: 1, warmup: 1155.43, run: 1156.13
+t: 2, warmup: 681.219, run: 740.305
+t: 3, warmup: 622.9, run: 518.111
+t: 4, warmup: 447.546, run: 440.879
+t: 5, warmup: 518.332, run: 512.617
+t: 6, warmup: 562.157, run: 558.412
+t: 7, warmup: 590.799, run: 593.876
+t: 8, warmup: 632.394, run: 638.872

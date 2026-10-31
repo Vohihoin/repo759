@@ -1,0 +1,9 @@
+schedule: guided,8
+t: 1, warmup: 1153.73, run: 1153.18
+t: 2, warmup: 644.292, run: 630.149
+t: 3, warmup: 502.381, run: 496.012
+t: 4, warmup: 408.589, run: 424.578
+t: 5, warmup: 529.806, run: 521.196
+t: 6, warmup: 534.13, run: 539.878
+t: 7, warmup: 592.119, run: 588.368
+t: 8, warmup: 637.319, run: 637.066
