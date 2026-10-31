@@ -14,17 +14,22 @@
 g++ task3.cpp -Wall -O3 -std=c++17 -o task3 -fopenmp
 
 
-N=100 # number of particles
+N=200 # number of particles
 T=100 # simulation time
 
-for s in static dynamic "guided,8"; do
+for s in static "dynamic,8" "guided,8"; do
     echo $s
     export OMP_SCHEDULE=$s
     
     for t in {1..8}; do
+        
         echo "t: $t"
-        ./task3 $N $T 8
-        ./task3 $N $T 8
+        echo "warm-up run"
+        ./task3 $N $T 8 # warm-up run
+        echo "actual run"
+        ./task3 $N $T $t
+        echo "--------------------"
+
     done
 
 done
