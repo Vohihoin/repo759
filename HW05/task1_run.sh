@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 #SBATCH -p instruction
 
 #SBATCH --job-name=Task1Run
