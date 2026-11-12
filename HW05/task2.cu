@@ -11,9 +11,16 @@ int main(){
     cudaError_t err = cudaMalloc((void**)(&dA), 16*sizeof(int));
     if (err != cudaSuccess)
     {
-        std::cout << "Error allocating memory: " << err << std::endl;
+        std::cout << "Error allocating memory: " << cudaGetErrorString(err) << std::endl;
         return 1;
     }
+
+    // generate random number to pass into as argument a
+    std::random_device rd;
+    std::mt19937 generator(rd()); // creates a Mersenne Twister random number generator
+
+    std::uniform_int_distribution<int> dist(0, 1000);
+    int a = dist(generator);
     
     // call our kernel
     task2<<<2, 8>>>(5, dA);
