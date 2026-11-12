@@ -2,12 +2,10 @@
 
 __global__ void task2(int a, int* dA){
     dA[blockIdx.x*blockDim.x + threadIdx.x] = a*threadIdx.x + blockIdx.x;
-    printf("Hello from thread %d on block %d\n", threadIdx.x, blockIdx.x);
+    // printf("Hello from thread %d on block %d\n", threadIdx.x, blockIdx.x);
 }
 
-int main(){
-
-    std::cout << "Starting" << std::endl;
+int main(){ 
 
     int hA[16], *dA;
     cudaError_t err = cudaMalloc((void**)(&dA), 16*sizeof(int));

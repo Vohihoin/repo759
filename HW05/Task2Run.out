@@ -1,18 +1,1 @@
-Starting
-Hello from thread 0 on block 1
-Hello from thread 1 on block 1
-Hello from thread 2 on block 1
-Hello from thread 3 on block 1
-Hello from thread 4 on block 1
-Hello from thread 5 on block 1
-Hello from thread 6 on block 1
-Hello from thread 7 on block 1
-Hello from thread 0 on block 0
-Hello from thread 1 on block 0
-Hello from thread 2 on block 0
-Hello from thread 3 on block 0
-Hello from thread 4 on block 0
-Hello from thread 5 on block 0
-Hello from thread 6 on block 0
-Hello from thread 7 on block 0
 0 5 10 15 20 25 30 35 1 6 11 16 21 26 31 36
