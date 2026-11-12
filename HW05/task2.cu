@@ -1,4 +1,5 @@
 #include <iostream>
+#include <random>
 
 __global__ void task2(int a, int* dA){
     dA[blockIdx.x*blockDim.x + threadIdx.x] = a*threadIdx.x + blockIdx.x;
@@ -23,7 +24,7 @@ int main(){
     int a = dist(generator);
     
     // call our kernel
-    task2<<<2, 8>>>(5, dA);
+    task2<<<2, 8>>>(a, dA);
 
     // synchronize threads
     cudaDeviceSynchronize();
