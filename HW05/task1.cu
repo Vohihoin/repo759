@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <cuda.h>
 
 __global__ void task1(){
     int n = threadIdx.x; // thread id within the block, since we're assuming block is 1 dimensional
@@ -15,5 +16,8 @@ __global__ void task1(){
 int main(){
     const int numElems = 8;
     std::printf("Hello world\n");
+
     task1<<<1, numElems>>>();
+
+    cudaDeviceSynchronize();
 }
