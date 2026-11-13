@@ -6,12 +6,12 @@ int main(int argc, char** argv){
 
     // Error checking for the code
     if (argc < 2){
-        std::cout << "Usage: " << argv[0] << " <num_ints > 0>" << std::endl;
+        std::cout << "Usage: " << argv[0] << " <num_ints> num_ints > 0" << std::endl;
     }
 
     int n = std::stoi(argv[1]);
     if (n <= 0){
-        std::cout << "Usage: " << argv[0] << " <num_ints > 0>" << std::endl;
+        std::cout << "Usage: " << argv[0] << " <num_ints> num_ints > 0" << std::endl;
     }
 
     // define grid and block dimensions
@@ -44,15 +44,15 @@ int main(int argc, char** argv){
     std::uniform_real_distribution<float> dist_a(-10.0f, 10.0f);
     std::uniform_real_distribution<float> dist_b(0.0f, 1.0f);
     
-    // for (int i = 0; i < n; i++){
-    //     A[i] = dist_a(generator);
-    //     B[i] = dist_b(generator);
-    // }
-
     for (int i = 0; i < n; i++){
-        A[i] = i;
-        B[i] = (i*1.0f)/n;
+        A[i] = dist_a(generator);
+        B[i] = dist_b(generator);
     }
+
+    // for (int i = 0; i < n; i++){
+    //     A[i] = i;
+    //     B[i] = (i*1.0f)/n;
+    // }
 
     cudaMemcpy(dA, &A, n*sizeof(float), cudaMemcpyHostToDevice);
     cudaMemcpy(dB, &B, n*sizeof(float), cudaMemcpyHostToDevice);
