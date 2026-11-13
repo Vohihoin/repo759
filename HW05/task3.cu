@@ -49,6 +49,7 @@ int main(int argc, char** argv){
         B[i] = dist_b(generator);
     }
 
+    // Testing functionality
     // for (int i = 0; i < n; i++){
     //     A[i] = i;
     //     B[i] = (i*1.0f)/n;
@@ -75,12 +76,12 @@ int main(int argc, char** argv){
     // Get the elapsed time in milliseconds
     float ms;
     cudaEventElapsedTime(&ms, start, stop);
-    std::cout << "Time: " << ms << " ms" << std::endl;
-
+    
     // Bring results from array dB back into B
     cudaMemcpy(&B, dB, n*sizeof(float), cudaMemcpyDeviceToHost);
 
-    // Print out the first and last values
+    // Print out the elapsed time, first and last values
+    std::cout << ms << std::endl;
     std::cout << B[0] << std::endl;
     std::cout << B[n-1] << std::endl;
 }
