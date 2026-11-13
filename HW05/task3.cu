@@ -48,9 +48,14 @@ int main(int argc, char** argv){
     std::uniform_real_distribution<float> dist_a(-10.0f, 10.0f);
     std::uniform_real_distribution<float> dist_b(0.0f, 1.0f);
     
+    // for (int i = 0; i < n; i++){
+    //     A[i] = dist_a(generator);
+    //     B[i] = dist_b(generator);
+    // }
+
     for (int i = 0; i < n; i++){
-        A[i] = dist_a(generator);
-        B[i] = dist_b(generator);
+        A[i] = i;
+        B[i] = (i*1.0f)/n;
     }
 
     cudaMemcpy(dA, &A, n*sizeof(float), cudaMemcpyHostToDevice);
