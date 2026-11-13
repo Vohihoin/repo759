@@ -57,11 +57,25 @@ int main(int argc, char** argv){
     cudaMemcpy(dA, &A, n*sizeof(float), cudaMemcpyHostToDevice);
     cudaMemcpy(dB, &B, n*sizeof(float), cudaMemcpyHostToDevice);
 
+    // Timing the kernel
+
+    // create the cuda events for timing
+    cudaEvent_t start;
+    cudaEvent_t stop;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
+
+    cudaEventRecord(start);
     // Launch the kernel
     vscale<<<gridDim, blockDim>>>(dA, dB, n);
-
+    cudaEventRecord(stop);
     // Wait for the kernel to synchronize
-    cudaDeviceSynchronize();
+    cudaEventSynchronize(stop);
+
+    // Get the elapsed time in milliseconds
+    float ms;
+    cudaEventElapsedTime(&ms, start, stop);
+    std::cout << "Time: " << ms << " ms" << std::endl;
 
     // Bring results from array dB back into B
     cudaMemcpy(&B, dB, n*sizeof(float), cudaMemcpyDeviceToHost);
