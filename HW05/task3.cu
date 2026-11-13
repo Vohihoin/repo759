@@ -15,7 +15,7 @@ int main(int argc, char** argv){
     }
 
     // define grid and block dimensions
-    int numThreads = 512;
+    int numThreads = 16;
     dim3 blockDim(numThreads);
     dim3 gridDim((n + numThreads - 1)/numThreads);
 
