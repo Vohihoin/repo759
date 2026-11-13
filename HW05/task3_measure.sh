@@ -27,7 +27,7 @@ nvcc task3.cu vscale.cu -Xcompiler -O3 -Xcompiler -Wall -Xptxas -O3 -std=c++17 -
 # and save these results into two files task3_timing.txt and task3_timing.csv
 
 for n in {10..29}; do
-    ms=$(./task3 $((2**n)))
+    ms=$(./task3 $((2**n)) | head -n 1)
     echo "2^$n: $ms ms" >> task3_timing.txt
     echo "2^$n, $ms" >> task3_timing.csv
 done
