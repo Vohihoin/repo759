@@ -62,7 +62,7 @@ int main(int argc, char** argv){
     cudaMemcpy(dB, &B, n*sizeof(float), cudaMemcpyHostToDevice);
 
     // Launch the kernel
-    vscale<<<gridDim, blockDim>>>();
+    vscale<<<gridDim, blockDim>>>(dA, dB, n);
 
     // Wait for the kernel to synchronize
     cudaDeviceSynchronize();
